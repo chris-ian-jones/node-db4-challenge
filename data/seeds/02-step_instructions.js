@@ -1,4 +1,3 @@
-
 exports.seed = function(knex) {
   return knex('step_instructions').insert([
     // recipe_id must match valid id for a recipe

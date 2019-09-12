@@ -12,6 +12,7 @@ function getRecipes(){
 
 function getShoppingList(recipe_id){
   return db('recipe_ingredients as r_i')
+    // join table // first join column // second join column
     .join('ingredients as i', 'i.id', 'r_i.ingredient_id')
     .where('r_i.recipe_id', recipe_id)
     .select('i.name', 'i.amount', 'r_i.quantity')

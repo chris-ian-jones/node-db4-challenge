@@ -1,4 +1,3 @@
-
 exports.seed = function(knex) {
   return knex('ingredients').insert([
     { name: 'ing aa', amount: '1oz' },

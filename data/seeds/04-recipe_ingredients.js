@@ -1,4 +1,5 @@
-
+// recipe_id must match valid id for a recipe
+// ingredient_id must match valid id for an ingredient
 exports.seed = function(knex, Promise) {
   return knex('recipe_ingredients').insert([
     { quantity: 1, recipe_id: 1, ingredient_id: 1 },
