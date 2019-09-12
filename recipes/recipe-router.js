@@ -14,4 +14,16 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  const { id } = req.params
+
+  Recipes.getShoppingList(id)
+  .then(shoppingList => {
+    res.json(shoppingList)
+  })
+  .catch(err => {
+    res.status(500).json({ message: 'Failed to get shopping list' })
+  })
+})
+
 module.exports = router
