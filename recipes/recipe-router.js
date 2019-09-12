@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id/shoppinglist', (req, res) => {
   const { id } = req.params
 
   Recipes.getShoppingList(id)
@@ -23,6 +23,18 @@ router.get('/:id', (req, res) => {
   })
   .catch(err => {
     res.status(500).json({ message: 'Failed to get shopping list' })
+  })
+})
+
+router.get('/:id/instructions', (req, res) => {
+  const { id } = req.params
+
+  Recipes.getInstructions(id)
+  .then(instructions => {
+    res.json(instructions)
+  })
+  .catch(err => {
+    res.status(500).json({ message: 'Failed to get instructions' })
   })
 })
 
